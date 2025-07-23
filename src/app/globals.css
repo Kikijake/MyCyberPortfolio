@@ -24,3 +24,64 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+.cyber-image {
+  /*
+    This creates the main duotone effect. It makes the image grayscale,
+    boosts the contrast, and then colorizes the shadows with your
+    theme's primary color (hot pink) for that classic cyberpunk look.
+  */
+  filter: grayscale(0%) contrast(120%) sepia(100%) hue-rotate(290deg) saturate(70%);
+  
+  /* Adds a subtle neon glow using the same primary color */
+
+  /* Makes it slightly transparent for a holographic feel */
+  opacity: 0.85;
+  
+  /* Smooth transition for the hover effect */
+  transition: all 0.3s ease-in-out;
+}
+
+/* src/app/globals.css */
+
+/* Define the scrolling animation */
+@keyframes scrollBackground {
+  from {
+    background-position: 0 0;
+  }
+  to {
+    /* Scrolls the background vertically by the height of the pattern */
+    background-position: 0 -1930px;
+  }
+}
+
+/*
+  Create a pseudo-element for the body to act as our animated background layer.
+  This ensures it sits behind all other content.
+*/
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 120vw;
+  height: 150vh;
+  
+  /* Use the SVG from your /public folder */
+  background-image: url(/circuit2.png);
+  
+  /* Make the pattern lines match your theme's secondary color (cyan) */
+  /* filter: invert(75%) sepia(82%) saturate(4433%) hue-rotate(145deg) brightness(102%) contrast(106%); */
+  
+  /* Make the background subtle */
+  opacity: 0.1;
+
+  /* Apply the animation */
+  animation: scrollBackground 15s linear infinite;
+
+  /* Place it behind everything else */
+  z-index: -1;
+}
+
+/* ... (Your other global styles like the .cyber-image class) ... */
+
