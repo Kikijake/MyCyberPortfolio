@@ -20,10 +20,12 @@ export default function ThemeRegistry({
         <Box
           sx={{
             minHeight: "100vh",
+            width: "100vw",
             pt: { xs: 8, sm: 0 },
             display: "flex",
             flexDirection: "column",
             alignItems: "center",
+            overflowX: "hidden",
           }}
         >
           {children}
