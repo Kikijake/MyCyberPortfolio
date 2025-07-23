@@ -85,10 +85,24 @@ const projectsData = [
 
 // ... (Animation variants remain the same)
 const containerVariants: Variants = {
-  /* ... */
+  hidden: {},
+  visible: {
+    transition: {
+      staggerChildren: 0.3,
+    },
+  },
 };
+
 const cardVariants: Variants = {
-  /* ... */
+  hiddenLeft: { x: -100, opacity: 0 },
+  hiddenRight: { x: 100, opacity: 0 },
+  visible: {
+    x: 0,
+    opacity: 1,
+    transition: {
+      duration: 0.5,
+    },
+  },
 };
 
 const glassmorphismStyle = {
@@ -152,9 +166,15 @@ export default function ProjectsPage() {
         variants={containerVariants}
       >
         <Grid container spacing={5}>
-          {projectsData.map((project) => (
+          {projectsData.map((project, index) => (
             <Grid size={12} key={project.title}>
-              <motion.div variants={cardVariants}>
+              <motion.div
+                custom={index}
+                initial={index % 2 === 0 ? "hiddenLeft" : "hiddenRight"}
+                whileInView="visible"
+                viewport={{ once: true, amount: 0.3 }}
+                variants={cardVariants}
+              >
                 <Box sx={glassmorphismStyle}>
                   <Grid container spacing={3} alignItems="center">
                     <Grid size={{ xs: 12, md: 7 }}>
