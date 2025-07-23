@@ -2,11 +2,12 @@
 "use client";
 import * as React from "react";
 import { useServerInsertedHTML } from "next/navigation";
-import createCache from "@emotion/cache";
+import createCache, { Options as EmotionCacheOptions } from "@emotion/cache"; // 1. Import the 'Options' type
 import { CacheProvider } from "@emotion/react";
 
+// 2. Use the imported 'EmotionCacheOptions' type instead of 'any'
 export default function NextAppDirEmotionCacheProvider(props: {
-  options: any;
+  options: EmotionCacheOptions;
   children: React.ReactNode;
 }) {
   const { options, children } = props;
