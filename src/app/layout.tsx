@@ -6,7 +6,7 @@ import "@/app/globals.css"; // Import global styles
 import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
-  title: "My Portfolio",
+  title: "Ye Htet San Portfolio",
   description: "Built with Next.js and MUI",
 };
 

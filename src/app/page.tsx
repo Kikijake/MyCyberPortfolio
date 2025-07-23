@@ -10,6 +10,7 @@ import { keyframes } from "@mui/system";
 import Image from "next/image";
 import Link from "next/link"; // <-- THIS WAS ALSO MISSING
 import { motion, Variants } from "framer-motion";
+import ProfileImage from "../../public/profile.jpg";
 
 // Image slide-in animation
 const slideInFromLeft = keyframes`
@@ -145,7 +146,7 @@ export default function HomePage() {
               }}
             >
               <Image
-                src="/profile.jpg"
+                src={ProfileImage}
                 alt="My Profile Picture"
                 width={300}
                 height={300}
