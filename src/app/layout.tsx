@@ -17,7 +17,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body>
+      <body style={{ overflowX: "hidden" }}>
         <ThemeRegistry>
           <Navbar />
           {children}
