@@ -12,7 +12,6 @@ import {
   IconButton,
 } from "@mui/material"; // 1. Import Modal and IconButton
 import { motion, Variants } from "framer-motion";
-import Link from "next/link";
 import Image from "next/image";
 import LanguageIcon from "@mui/icons-material/Language";
 import GitHubIcon from "@mui/icons-material/GitHub";

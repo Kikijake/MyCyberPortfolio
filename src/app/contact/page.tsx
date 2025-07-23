@@ -127,9 +127,9 @@ export default function ContactPage() {
                 Open to Opportunities
               </Typography>
               <Typography variant="body1" color="text.secondary">
-                I'm currently available for freelance projects and open to
-                discussing full-time positions. Let's build something amazing
-                together!
+                I&apos;m currently available for freelance projects and open to
+                discussing full-time positions. Let&apos;s build something
+                amazing together!
               </Typography>
             </Box>
           </motion.div>
