@@ -1,13 +1,14 @@
 // src/app/page.tsx
 "use client";
+import React from "react"; // <-- ADD THIS LINE
 import Container from "@mui/material/Container";
 import Typography from "@mui/material/Typography";
 import Box from "@mui/material/Box";
 import Button from "@mui/material/Button";
-import { Grid, useTheme } from "@mui/material"; // Import useTheme to access theme colors
+import { Grid, useTheme } from "@mui/material";
 import { keyframes } from "@mui/system";
 import Image from "next/image";
-import Link from "next/link";
+import Link from "next/link"; // <-- THIS WAS ALSO MISSING
 import { motion, Variants } from "framer-motion";
 
 // Image slide-in animation
@@ -22,7 +23,7 @@ const slideInFromLeft = keyframes`
   }
 `;
 
-// 1. Define the keyframes for the rotating border line
+// Define the keyframes for the rotating border line
 const rotate = keyframes`
   from {
     transform: rotate(0deg);
@@ -78,7 +79,7 @@ const AnimatedText = ({
   className,
 }: {
   text: string;
-  el?: keyof JSX.IntrinsicElements;
+  el?: React.ElementType;
   className?: string;
 }) => {
   const words = text.split(" ");
@@ -99,7 +100,7 @@ const AnimatedText = ({
 };
 
 export default function HomePage() {
-  const theme = useTheme(); // Hook to get theme colors for the gradient
+  const theme = useTheme();
 
   return (
     <Container maxWidth="lg" sx={{ pt: { xs: 2, md: 6 } }}>
@@ -109,7 +110,6 @@ export default function HomePage() {
         alignItems="center"
         sx={{ minHeight: "80vh" }}
       >
-        {/* Grid Item 1: The Image */}
         <Grid size={{ xs: 12, md: 4 }} sx={{ textAlign: "center" }}>
           <Box
             sx={{
@@ -120,9 +120,8 @@ export default function HomePage() {
               overflow: "hidden",
               boxShadow: 3,
               animation: `${slideInFromLeft} 1.2s ease-out`,
-              position: "relative", // Needed for the pseudo-element
-              p: "5px", // Padding to create space for the border effect
-              // 2. Add the ::before pseudo-element for the animated border
+              position: "relative",
+              p: "5px",
               "&::before": {
                 content: '""',
                 position: "absolute",
@@ -131,20 +130,18 @@ export default function HomePage() {
                 right: 0,
                 bottom: 0,
                 borderRadius: "50%",
-                // Creates a conic gradient with a sharp line of your secondary color
                 background: `conic-gradient(from 180deg, transparent 0%, ${theme.palette.secondary.main} 30%, transparent 10%)`,
                 animation: `${rotate} 4s linear infinite`,
               },
             }}
           >
-            {/* 3. Add an inner box to contain the image and sit on top of the animation */}
             <Box
               sx={{
                 width: "100%",
                 height: "100%",
                 borderRadius: "50%",
                 overflow: "hidden",
-                position: "relative", // To ensure it sits above the ::before pseudo-element
+                position: "relative",
               }}
             >
               <Image
@@ -163,7 +160,6 @@ export default function HomePage() {
           </Box>
         </Grid>
 
-        {/* Grid Item 2: The Animated Text Content */}
         <Grid size={{ xs: 12, md: 8 }}>
           <Box sx={{ textAlign: "center" }}>
             <motion.div
