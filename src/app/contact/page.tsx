@@ -59,7 +59,7 @@ export default function ContactPage() {
         setStatus("error");
         setErrorMessage(
           error.text ||
-            "Failed to send message. Please check your EmailJS configuration."
+            "Failed to send message. Something went wrong. Please try again later."
         );
       }
     );

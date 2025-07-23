@@ -111,6 +111,7 @@ export default function HomePage() {
         alignItems="center"
         sx={{ minHeight: "80vh" }}
       >
+        {/* Grid Item 1: The Image */}
         <Grid size={{ xs: 12, md: 4 }} sx={{ textAlign: "center" }}>
           <Box
             sx={{
@@ -118,7 +119,6 @@ export default function HomePage() {
               height: { xs: 250, md: 300 },
               mx: "auto",
               borderRadius: "50%",
-              overflow: "hidden",
               boxShadow: 3,
               animation: `${slideInFromLeft} 1.2s ease-out`,
               position: "relative",
@@ -136,6 +136,7 @@ export default function HomePage() {
               },
             }}
           >
+            {/* 1. UPDATE: The inner box now contains BOTH images and the hover logic */}
             <Box
               sx={{
                 width: "100%",
@@ -143,20 +144,46 @@ export default function HomePage() {
                 borderRadius: "50%",
                 overflow: "hidden",
                 position: "relative",
+                // This is the hover trigger
+                "&:hover .hover-image": {
+                  opacity: 1,
+                },
               }}
             >
+              {/* The default image (profile.png) */}
               <Image
                 src="/profile.jpg"
                 alt="My Profile Picture"
-                width={300}
-                height={300}
-                className="cyber-image"
+                fill
                 style={{
-                  width: "100%",
-                  height: "100%",
                   objectFit: "cover",
                 }}
+                className=""
               />
+
+              {/* The image that appears on hover (profile.jpg) */}
+              <Box
+                className="hover-image" // Class name to target on hover
+                sx={{
+                  position: "absolute",
+                  top: 0,
+                  left: 0,
+                  width: "100%",
+                  height: "100%",
+                  opacity: 0, // Initially invisible
+                  transition: "opacity 0.4s ease-in-out", // Smooth fade effect
+                }}
+              >
+                <Image
+                  src="/profile1.jpg"
+                  alt="My Profile Picture - Hover"
+                  fill
+                  className="cyber-image"
+                  style={{
+                    objectFit: "cover",
+                  }}
+                />
+              </Box>
             </Box>
           </Box>
         </Grid>

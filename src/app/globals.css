@@ -31,12 +31,12 @@ body {
     boosts the contrast, and then colorizes the shadows with your
     theme's primary color (hot pink) for that classic cyberpunk look.
   */
-  filter: grayscale(0%) contrast(120%) sepia(100%) hue-rotate(290deg) saturate(70%);
+  filter: grayscale(30%) contrast(120%) sepia(100%) hue-rotate(200deg) saturate(70%);
   
   /* Adds a subtle neon glow using the same primary color */
 
   /* Makes it slightly transparent for a holographic feel */
-  opacity: 0.85;
+  /* opacity: 0.85; */
   
   /* Smooth transition for the hover effect */
   transition: all 0.3s ease-in-out;
