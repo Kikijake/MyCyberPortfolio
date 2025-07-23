@@ -58,7 +58,7 @@ function Skills() {
       >
         <Grid container justifyContent="center" spacing={4} sx={{ mt: 4 }}>
           {skillsData.map((skill) => (
-            <Grid key={skill.name} size={{ xs: 2, sm: 1.5 }}>
+            <Grid key={skill.name} size={{ xs: 3, sm: 1.5 }}>
               <motion.div variants={itemVariants}>
                 <CircularSkill
                   name={skill.name}
