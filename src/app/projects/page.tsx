@@ -19,6 +19,24 @@ import CloseIcon from "@mui/icons-material/Close"; // 1. Import CloseIcon
 
 const projectsData = [
   {
+    title: "Thadar Wint Htal Logistics Company",
+    description:
+      "Developed a full-stack website for a logistics company with a customer-facing portal and admin dashboard. Built responsive pages to showcase company portfolio and blog content. Implemented an admin CMS for managing portfolio information and uploading/editing posts. Integrated APIs and structured database for dynamic content management. Deployed the application to production and handled basic maintenance and updates.",
+    image: "/projects/ThadarLogistics.jpg",
+    technologies: ["Next.js", "Nest.js", "Prisma", "MySQL"],
+    link: "https://www.thadarwinthtallogistics.com/",
+    githubLink: null,
+  },
+  {
+    title: "Green Paradise Travel Laos",
+    description:
+      "Contributed to the development and maintenance of the GreenParadise Travel Tours Website using WordPress. Enhanced UI/UX by redesigning and improving existing pages. Developed and implemented new pages to support business requirements. Managed and updated tour package content to ensure accuracy and relevance. Ensured a user-friendly and visually consistent website experience.",
+    image: "/projects/GreenParadise.jpg",
+    technologies: ["WordPress", "Elementor"],
+    link: "https://greenparadisetravellaos.com/",
+    githubLink: null,
+  },
+  {
     title: "Easy Card",
     description:
       "A web-based image customization tool that empowers users to design personalized backgrounds with ease. Key features include adjustable background ratios, the ability to change background colors or upload custom images, sticker placement, undo/redo functionality, and image export for download. Designed with user-friendly controls for a smooth and interactive editing experience.",
@@ -225,6 +243,17 @@ export default function ProjectsPage() {
                               target="_blank"
                             >
                               Demo
+                            </Button>
+                          )}
+                          {project.link && (
+                            <Button
+                              variant="contained"
+                              color="secondary"
+                              startIcon={<LanguageIcon />}
+                              href={project.link}
+                              target="_blank"
+                            >
+                              Live Site
                             </Button>
                           )}
                           {project.githubLink && (

@@ -9,6 +9,32 @@ import Skills from "@/components/Skills";
 const experienceData = [
   {
     role: "Full Stack Developer (Mid)",
+    company: "K-WIN TECHNOLOGIES",
+    date: "08/2025 - Present",
+    technologies: [
+      "React.js",
+      "Express.js",
+      "Prisma",
+      "Mongoose",
+      "Laravel",
+      "MongoDB",
+      "AWS Lightsail",
+      "Nginx",
+      "Apache",
+    ],
+    description: [
+      "Designed and developed RESTful APIs for a Learning Management System, covering voucher management, course operations, and core admin/student workflows.",
+      "Built and maintained CMS and POS APIs for an aesthetic clinic, focusing on sales flows, voucher systems, booking, appointments, and stock history management.",
+      "Maintained and improved backend systems for a Wedding POS platform, resolving bugs and enhancing system stability.",
+      "Played a key role as Assistant Team Lead, mentoring junior developers, reviewing code, and coordinating task assignments to ensure efficient delivery.",
+      "Implemented transaction handling and logging mechanisms to improve system reliability and traceability.",
+      "Designed and managed CI/CD pipelines using Jenkins, Docker, and GitHub Actions, ensuring smooth and automated deployments (including Suzuki project).",
+      "Deployed and maintained servers across multiple projects, with hands-on experience in environment setup, monitoring, and troubleshooting.",
+      "Managed GitHub repositories, including branch strategies, version control, and collaboration workflows.",
+    ],
+  },
+  {
+    role: "Full Stack Developer (Mid)",
     company: "Planet Hub",
     date: "06/2025 - 07/2025",
     technologies: [
