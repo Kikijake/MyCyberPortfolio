@@ -3,7 +3,7 @@ import { convertToModelMessages, createUIMessageStream, createUIMessageStreamRes
 
 // Explicitly define nodejs runtime for Netlify Serverless compatibility
 export const runtime = 'nodejs';
-
+export const dynamic = 'force-dynamic';
 // Initialize the Google Generative AI provider using the specific environment variable
 const google = createGoogleGenerativeAI({
   apiKey: process.env.GEMINI_API_KEY,
