@@ -9,11 +9,14 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@ai-sdk/google": "^3.0.75",
+    "@ai-sdk/react": "^3.0.187",
     "@emailjs/browser": "^4.4.1",
     "@emotion/react": "^11.14.0",
     "@emotion/styled": "^11.14.1",
     "@mui/icons-material": "^7.2.0",
     "@mui/material": "^7.2.0",
+    "ai": "^6.0.185",
     "framer-motion": "^12.23.6",
     "next": "^16.2.4",
     "react": "^19.2.5",
