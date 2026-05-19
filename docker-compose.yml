@@ -1,0 +1,14 @@
+services:
+  portfolio:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      target: production
+    container_name: my-portfolio-prod
+    restart: always
+    ports:
+      - "3000:80"
+    # No volumes here! In production, we want the code baked into the image
+    # so that it is immutable and fast.
+    environment:
+      - NODE_ENV=production
